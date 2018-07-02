@@ -8,7 +8,8 @@ pipeline {
 			steps {
 				echo "Building..."
 				sh 'sudo su'
-				sh 'make html'
+				sh 'docker run -v `pwd`:/build damoncheng/public:debian-build-v1'
+
 			}
 		}
 
