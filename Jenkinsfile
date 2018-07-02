@@ -8,7 +8,7 @@ pipeline {
 			steps {
 				echo "Building..."
 				sh 'sudo su'
-				sh 'docker run -v `pwd`:/build damoncheng/public:debian-build-v1'
+				sh 'docker run -v `pwd`:/build damoncheng/python:jessie'
 
 			}
 		}
