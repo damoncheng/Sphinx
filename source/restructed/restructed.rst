@@ -33,13 +33,20 @@ Lists and Quote-like blocks
 
     * and here the parent list continues
 
-term (up to a line of text)
+    term (up to a line of text)
 
-    Definition of the term, which must be indented
+        Definition of the term, which must be indented
 
-    and can even consist of multiple paragraphs
+        and can even consist of multiple paragraphs
 
-next term
-    Description.
+    next term
+        Description.
+
+    | These lines are
+    | broken exactly like in
+    | the source file.
+
+
+
 
 
