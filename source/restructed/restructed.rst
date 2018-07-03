@@ -57,7 +57,13 @@ This is a normal text paragraph. The next paragraph is a code sample::
 
 This is a normal text paragraph again.
 
+**Tables**
 
-
+====== ====== ======
+A      B      C
+====== ====== ======
+False  False  False
+True   True   False
+====== ====== ======
 
 
