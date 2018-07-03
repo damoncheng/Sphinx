@@ -33,4 +33,13 @@ Lists and Quote-like blocks
 
     * and here the parent list continues
 
+term (up to a line of text)
+
+    Definition of the term, which must be indented
+
+    and can even consist of multiple paragraphs
+
+next term
+    Description.
+
 
