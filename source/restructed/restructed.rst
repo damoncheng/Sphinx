@@ -6,7 +6,8 @@ Restructed summary
     This is a study restructedText based on sphinx   
 
 
-**Inline Markup**
+Inline Markup
+----------------------------
 
     *text*     #emphasis(italics)
 
