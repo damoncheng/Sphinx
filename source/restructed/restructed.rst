@@ -8,11 +8,11 @@ Restructed summary
 
 Inline Markup
 
-    *text*     emphasis(italics)
+    *text*     #emphasis(italics)
 
-    **text**   string emphasis(boldface)
+    **text**   #string emphasis(boldface)
 
-    ``text``   code sample
+    ``text``   #code sample
 
 Lists and Quote-like blocks
 
@@ -24,5 +24,13 @@ Lists and Quote-like blocks
 
     #. This is a numbered list.
     #. It has two items too.
+
+    * this is
+    * a list
+
+        * with a nested list
+        * and some subitems
+
+    * and here the parent list continues
 
 
