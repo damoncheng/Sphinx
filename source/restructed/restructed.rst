@@ -7,7 +7,7 @@ Restructed summary
 
 
 Inline Markup
-----------------------------
+============================
 
     *text*     #emphasis(italics)
 
@@ -16,7 +16,7 @@ Inline Markup
     ``text``   #code sample
 
 Lists and Quote-like blocks
-----------------------------
+============================
 
     * This is a bulleted list.
     * It has two items, the second item uses two lines.
@@ -49,7 +49,7 @@ Lists and Quote-like blocks
     | the source file.
 
 Source Code
-----------------------------
+============================
 
 This is a normal text paragraph. The next paragraph is a code sample::
 
@@ -61,7 +61,7 @@ This is a normal text paragraph. The next paragraph is a code sample::
 This is a normal text paragraph again.
 
 Tables
-----------------------------
+============================
 
 ====== ====== ======
 A      B      C
@@ -71,7 +71,7 @@ True   True   False
 ====== ====== ======
 
 Hperlinks
-----------------------------
+============================
 
 This is a paragraph that contains `a link`_.
 
