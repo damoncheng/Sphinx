@@ -6,7 +6,7 @@ Restructed summary
     This is a study restructedText based on sphinx   
 
 
-Inline Markup
+**Inline Markup**
 
     *text*     #emphasis(italics)
 
@@ -14,7 +14,7 @@ Inline Markup
 
     ``text``   #code sample
 
-Lists and Quote-like blocks
+**Lists and Quote-like blocks**
 
     * This is a bulleted list.
     * It has two items, the second item uses two lines.
@@ -45,6 +45,8 @@ Lists and Quote-like blocks
     | These lines are
     | broken exactly like in
     | the source file.
+
+**Source**
 
 
 
