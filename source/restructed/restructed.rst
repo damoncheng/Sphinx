@@ -4,8 +4,8 @@ Restructed summary
 
 Inline Markup
 
-    *text*     ...emphasis(italics)
+    *text*     ... emphasis(italics)
 
-    **text**   ...string emphasis(boldface)
+    **text**   ... string emphasis(boldface)
 
-    ``text``   ...code sample
+    ``text``   ... code sample
