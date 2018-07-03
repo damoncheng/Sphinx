@@ -12,6 +12,7 @@ Contents:
    :maxdepth: 2
 
    restructed/restructed.rst
+   restructed/debug.rst
 
 
 Indices and tables
