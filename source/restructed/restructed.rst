@@ -111,6 +111,11 @@ Citations
 
 Lorem ipsum [Ref]_ dolor sit amet.
 
+Substitutions
+===========================
+
+.. |name| replace:: replacement *text*
+
 .. [Ref] Book or article reference, URL or whatever.
 
 .. rubic:: Footnotes
