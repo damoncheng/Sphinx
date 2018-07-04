@@ -114,6 +114,8 @@ Lorem ipsum [Ref]_ dolor sit amet.
 Substitutions
 ===========================
 
+|name| is replaced
+
 .. |name| replace:: replacement *text*
 
 .. [Ref] Book or article reference, URL or whatever.
