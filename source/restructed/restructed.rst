@@ -76,3 +76,14 @@ Hperlinks
 This is a paragraph that contains `a link`_.
 
 .. _a link : http://www.baidu.com/
+
+Directives
+============================
+
+a directive is a generic block of explicit markup. Besides roles, it is one of the extension mechanism 
+of reST, and Sphinx makes heavy use of it.
+
+a directive consists of a **name**, **arguments**, **options** and **content**.
+
+
+
