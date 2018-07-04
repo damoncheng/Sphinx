@@ -116,6 +116,10 @@ Substitutions
 
 |name| is replaced
 
+|caution|
+
+.. |caution| image:: images/picture.jpeg
+
 .. |name| replace:: replacement *text*
 
 .. [Ref] Book or article reference, URL or whatever.
