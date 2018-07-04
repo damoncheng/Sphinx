@@ -106,10 +106,16 @@ after a "Footnotes" rubric heading.
 
 Lorem ipsum [#f1]_ dolor sit amet ... [#f2]_
 
+.. rubic:: Footnotes
+
+.. [#f1] Text of the first footnote.
+.. [#f2] Text of the second footnote.
+
 Citations
 ===========================
 
 Lorem ipsum [Ref]_ dolor sit amet.
+.. [Ref] Book or article reference, URL or whatever.
 
 Substitutions
 ===========================
@@ -122,9 +128,3 @@ Substitutions
 
 .. |name| replace:: replacement *text*
 
-.. [Ref] Book or article reference, URL or whatever.
-
-.. rubic:: Footnotes
-
-.. [#f1] Text of the first footnote.
-.. [#f2] Text of the second footnote.
