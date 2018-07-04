@@ -96,4 +96,4 @@ a directive consists of a **name**, **arguments**, **options** and **content**.
 Images
 ===========================
 
-.. image:: restructed/images/picture.jpeg
+.. image:: images/picture.jpeg
