@@ -97,3 +97,18 @@ Images
 ===========================
 
 .. image:: images/picture.jpeg
+
+Footnotes
+===========================
+
+use `[#name]_` to mark the footnote location. and add the footnote body at the bottom of the document 
+after a "Footnotes" rubric heading.
+
+Lorem ipsum [#f1]_ dolor sit amet ... [#f2]_
+
+
+
+.. rubic:: Footnotes
+
+.. [#f1] Text of the first footnote.
+.. [#f2] Text of the second footnote.
