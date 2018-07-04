@@ -92,3 +92,8 @@ a directive consists of a **name**, **arguments**, **options** and **content**.
    :module: some.module.name
 
    Return a line of text input from the user
+
+Images
+===========================
+
+.. image:: restructed/images/picture.jpeg
