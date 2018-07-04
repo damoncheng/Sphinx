@@ -86,4 +86,9 @@ of reST, and Sphinx makes heavy use of it.
 a directive consists of a **name**, **arguments**, **options** and **content**.
 
 
+.. function:: foo(x)
+              foo(y, z)
 
+   :module: some.module.name
+
+   Return a line of text input from the user
