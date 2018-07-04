@@ -106,7 +106,12 @@ after a "Footnotes" rubric heading.
 
 Lorem ipsum [#f1]_ dolor sit amet ... [#f2]_
 
+Citations
+===========================
 
+Lorem ipsum [Ref]_ dolor sit amet.
+
+.. [Ref] Book or article reference, URL or whatever.
 
 .. rubic:: Footnotes
 
