@@ -14,6 +14,9 @@ Contents:
    :numbered:
 
    restructed/*
+   restructed/django_sim_introdution.rst
+   restructed/django_sim_install.rst
+   restructed/django_sim_auth.rst
 
 .. Indices and tables
 .. ==================
