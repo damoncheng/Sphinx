@@ -10,6 +10,7 @@ Contents:
 
 .. toctree::
    :maxdepth: 2
+   :numbered:
 
    restructed/restructed.rst
    restructed/debug.rst
