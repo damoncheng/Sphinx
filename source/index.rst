@@ -13,10 +13,10 @@ Contents:
    :maxdepth: 2
    :numbered:
 
-   restructed/*
    restructed/django_sim_introdution.rst
    restructed/django_sim_install.rst
    restructed/django_sim_auth.rst
+   restructed/*
 
 .. Indices and tables
 .. ==================
