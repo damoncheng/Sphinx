@@ -9,12 +9,11 @@ Welcome to sphinx's documentation!
 Contents:
 
 .. toctree::
+   :glob:
    :maxdepth: 2
    :numbered:
 
-   restructed/restructed.rst
-   restructed/debug.rst
-
+   restructed/*
 
 Indices and tables
 ==================
