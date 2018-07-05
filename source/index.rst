@@ -13,7 +13,7 @@ Contents:
    :numbered:
 
    restructed/restructed.rst
-   *
+   restructed/*
 
 
 Indices and tables
