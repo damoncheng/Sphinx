@@ -13,7 +13,7 @@ Contents:
    :numbered:
 
    restructed/restructed.rst
-   restructed/*
+   restructed/debug.rst
 
 
 Indices and tables
