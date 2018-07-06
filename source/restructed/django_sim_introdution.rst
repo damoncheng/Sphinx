@@ -23,3 +23,12 @@ django_sim基一套推送和管理资源的SDK, 其基于SCIM方案为模板，
     django_sim reicever和sender都可以使用django-oauth-toolkit搭建基于
     client credentials认证的app来生成认证信息，client可以基于认证信息来访问django_sim的
     API来获取相关资源信息。
+
+认证User替换
+
+    替换原来的django user表，通过SCIM的方式提供User资源
+
+tof认证
+
+    提供认证django 认证backend和djangorestframwork认证backend实现tof认证
+ 
