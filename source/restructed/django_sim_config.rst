@@ -2,7 +2,8 @@
 配置
 ===================================
 
-django_sim application定义，以及替换django认证User
+django_sim application定义，替换django认证User
+使用django自身认证backend认证django admin页面
 ======================================================
 
     在django工程 ``settings.py`` 配置里面::
@@ -19,10 +20,17 @@ django_sim application定义，以及替换django认证User
             'oauth2_provider',
             'rest_framework',
             'django_sim',
+
+            ...
         
         ]
 
         AUTH_USER_MODEL=`django_sim.User`
+
+        AUTHENTICATION_BACKENDS = [
+            ...
+            'django.contrib.auth.backends.ModelBackend',
+        ]
 
 创建django_sim超级管理用户
 ======================================================
@@ -31,3 +39,5 @@ django_sim application定义，以及替换django认证User
     来管理,所以在做其他功能配置前，先创建超级管理员 ``django_sim`` ::
 
         python createsuperuser django_sim
+
+    按提示配置 ``django_sim`` 超级管理
