@@ -5,7 +5,7 @@
 依赖
 =======================================
 
-django_sim依赖一下环境:
+django_sim依赖一下环境::
 
     python3
     django>=2.0
@@ -16,13 +16,13 @@ django_sim依赖一下环境:
 指定镜像安装
 =======================================
 
-django_sim可以通过pip3指定镜像安装:
+django_sim可以通过pip3指定镜像安装::
 
     后续补充
 
 本地安装
 =======================================
 
-django_sim可以通过pip3本地安装:
+django_sim可以通过pip3本地安装::
 
     pip3 install django_sim-1.0.tar.gz
