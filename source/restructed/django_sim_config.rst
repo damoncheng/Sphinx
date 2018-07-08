@@ -2,12 +2,12 @@
 配置
 ===================================
 
-django_sim application定义，替换django认证User
-使用django自身认证backend认证django admin页面
+django_sim在django工程 ``settings.py`` 基础配置
 ======================================================
 
     在django工程 ``settings.py`` 配置里面::
 
+        #django_sim application定义
         INSTALLED_APPS = [
 
             django.contrib.admin,
@@ -25,8 +25,10 @@ django_sim application定义，替换django认证User
         
         ]
 
+        #django_sim替换django认证User
         AUTH_USER_MODEL=`django_sim.User`
 
+        #使用django自身认证backend，认证django admin登录页面
         AUTHENTICATION_BACKENDS = [
             ...
             'django.contrib.auth.backends.ModelBackend',
