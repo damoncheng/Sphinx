@@ -7,7 +7,7 @@
 
 django_sim依赖一下环境::
 
-    python3
+    python3.x
     django>=2.0
     djangorestframework==3.7.7
     django-oauth-toolkit==1.1.0
