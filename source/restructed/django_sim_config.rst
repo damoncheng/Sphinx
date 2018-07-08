@@ -5,7 +5,7 @@
 django_sim在 ``settings.py`` 基础配置
 ======================================================
 
-    在django工程 ``settings.py`` 配置里面::
+    在django工程 ``settings.py`` 里面配置::
 
         #django_sim application定义
         INSTALLED_APPS = [
