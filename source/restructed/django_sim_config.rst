@@ -5,24 +5,24 @@
 django_sim application定义，以及替换django认证User
 ======================================================
 
-在django工程``settings.py``配置里面::
+    在django工程 ``settings.py`` 配置里面::
 
-    INSTALLED_APPS = [
+        INSTALLED_APPS = [
 
-        django.contrib.admin,
-        django.contrib.auth,
-        django.contrib.contenttypes,
-        django.contrib.sessions,
-        django.contrib.messages,
-        django.contrib.staticfiles,
+            django.contrib.admin,
+            django.contrib.auth,
+            django.contrib.contenttypes,
+            django.contrib.sessions,
+            django.contrib.messages,
+            django.contrib.staticfiles,
 
-        'oauth2_provider',
-        'rest_framework',
-        'django_sim',
-    
-    ]
+            'oauth2_provider',
+            'rest_framework',
+            'django_sim',
+        
+        ]
 
-    AUTH_USER_MODEL=`django_sim.User`
+        AUTH_USER_MODEL=`django_sim.User`
 
 创建django_sim超级管理用户
 ======================================================

@@ -7,24 +7,24 @@ django_sim目前只支持环境python3和django>=2.0
 依赖
 =======================================
 
-django_sim依赖一下环境::
+    django_sim依赖一下环境::
 
-    python3.x
-    django>=2.0
-    djangorestframework==3.7.7
-    django-oauth-toolkit==1.1.0
-    suds-py3==1.3.3.0
+        python3.x
+        django>=2.0
+        djangorestframework==3.7.7
+        django-oauth-toolkit==1.1.0
+        suds-py3==1.3.3.0
 
 指定镜像安装
 =======================================
 
-django_sim可以通过pip3指定镜像安装::
+    django_sim可以通过pip3指定镜像安装::
 
-    后续补充
+        后续补充
 
 本地安装
 =======================================
 
-django_sim可以通过pip3本地安装::
+    django_sim可以通过pip3本地安装::
 
-    pip3 install django_sim-1.0.tar.gz
+        pip3 install django_sim-1.0.tar.gz
