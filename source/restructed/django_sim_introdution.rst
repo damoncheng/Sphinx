@@ -41,10 +41,21 @@ django_sim资源
 
             bulk有四种类型:
 
-            全量同步bulk:     在sender第一次全量同步资源到receiver时使用
-            全量同步结束bulk: 在sender第一次成功全量同步资源到receiver后使用
-            增量同步bulk:     在sender第一次成功同步后，每次同步资源到receiver时使用
-            增量同步结束bulk: 在sender第一次成功同步后，每次成功同步资源到receiver后使用
+            全量同步bulk:     
+
+                在sender第一次全量同步资源到receiver时使用
+
+            全量同步结束bulk: 
+            
+                在sender第一次成功全量同步资源到receiver后使用
+            
+            增量同步bulk:   
+
+                在sender第一次成功同步后，每次同步资源到receiver时使用
+
+            增量同步结束bulk: 
+            
+                在sender第一次成功同步后，每次成功同步资源到receiver后使用
 
 
         
