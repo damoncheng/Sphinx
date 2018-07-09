@@ -48,7 +48,7 @@ django_sim资源
         的app来生成认证信息，然后receiver提交认证信息到django_sim sender进行注册，
         注册完成后，receiver自助完成认证, 认证完成后, sender将定时同步资源到receiver
 
-        .. image:: images images/django_sim_push.png
+        .. image:: images/django_sim_push.png
 
     资源管理
 
