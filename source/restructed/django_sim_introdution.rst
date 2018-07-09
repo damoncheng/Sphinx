@@ -12,22 +12,24 @@
 资源
 ============================================================
 
-    User
-    
-        用户
+    django工程可使用的资源有::
 
-    Team
+        User
+        
+            用户
 
-        用户组, 一个Team下面可以包含多个User和Team。Team对应公司的各层组织架构
+        Team
 
-    Role 
+            用户组, 一个Team下面可以包含多个User和Team。Team对应公司的各层组织架构
 
-        用户角色, 用户角色属于一个Team。Role主要时为了给各平台系统基于Role来进行权限控制。
-        比如在SNG产品部时一个Team，下面可以创建一个CMO的Role。
+        Role 
 
-    Project
+            用户角色, 用户角色属于一个Team。Role主要时为了给各平台系统基于Role来进行权限控制。
+            比如在SNG产品部时一个Team，下面可以创建一个CMO的Role。
 
-        Project是一个命名空间，属于一个User或一个Team。主要是为了中心各平台使用同一的项目名称。
+        Project
+
+            Project是一个命名空间，属于一个User或一个Team。主要是为了中心各平台使用同一的项目名称。
 
         
 功能
