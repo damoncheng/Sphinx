@@ -9,10 +9,10 @@
     使用django-oauth-toolkit进行认证和权限控制，
     使用djangorestframework进行资源推送。
 
-资源
+django_sim资源
 ============================================================
 
-    django工程可使用的资源有::
+    django工程可使用的资源::
 
         User
         
@@ -31,6 +31,13 @@
 
             Project是一个命名空间，属于一个User或一个Team。主要是为了中心各平台使用同一的项目名称。
 
+    资源推送方式::
+
+        Bulk
+
+            django_sim sender基于bulk来推送资源, 默认bulk大小是1024条记录，bulk类型
+
+
         
 功能
 ============================================================
@@ -40,6 +47,8 @@
         django_sim receiver使用django-oauth-toolkit搭建基于Authorization code认证
         的app来生成认证信息，然后receiver提交认证信息到django_sim sender进行注册，
         注册完成后，receiver自助完成认证, 认证完成后, sender将定时同步资源到receiver
+
+        .. image:: images images/django_sim_push.png
 
     资源管理
 
