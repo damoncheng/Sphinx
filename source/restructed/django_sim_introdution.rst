@@ -31,11 +31,20 @@ django_sim资源
 
             Project是一个命名空间，属于一个User或一个Team。主要是为了中心各平台使用同一的项目名称。
 
-    资源推送方式::
+    推送资源::
 
         Bulk
 
-            django_sim sender基于bulk来推送资源, 默认bulk大小是1024条记录，bulk类型
+            django_sim sender基于bulk来推送资源, 默认bulk大小是1024条记录，第一次全量同步资源到
+            receiver，第二次以后增量同步资源到receiver。sender在每次推送前会取receiver的最后一次
+            结束bulk来作为参考进行推送，保证推送后reciver数据全量。
+
+            bulk有四种类型:
+
+            全量同步bulk:     在sender第一次全量同步资源到receiver时使用
+            全量同步结束bulk: 在sender第一次成功全量同步资源到receiver后使用
+            增量同步bulk:     在sender第一次成功同步后，每次同步资源到receiver时使用
+            增量同步结束bulk: 在sender第一次成功同步后，每次成功同步资源到receiver后使用
 
 
         
