@@ -69,9 +69,9 @@ django_sim在 ``settings.py`` 基础配置
         }
 
         LOGIN_URL = "http://passport.oa.com/modules/passport/signin.ashx?title=%s&url=%s" 
-            % ("title", "http://hostname/django_sim/sim_login/")
+            % ("title", "http:// ``hostname`` /django_sim/sim_login/")
         LOGOUT_URL = "http://passport.oa.com/modules/passport/signout.ashx?title=%s&url=%s"
-            %s ("title", "http://hostname/django_sim/sim_login/")
+            %s ("title", "http:// ``hostname`` /django_sim/sim_login/")
         
 
 
