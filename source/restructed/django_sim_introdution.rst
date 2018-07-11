@@ -57,7 +57,7 @@ django_sim资源
             
                 在sender第一次成功同步后，每次成功同步资源到receiver后使用
 
-    注册receiver:
+    注册receiver::
 
         Auth
 
