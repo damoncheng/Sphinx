@@ -38,7 +38,7 @@ django_sim receiver
         Redirect Urls : http://{sender_hostname}/django_sim/exchange?
         sim_site=http://{receiver_hostname}
 
-    添加完成后，将生成认证信息 ``client_id`` 和 ``client_secrets``
+    添加完成后，可获取认证信息 ``client_id`` 和 ``client_secrets``
 
 提交认证信息给django_sim sender注册
 ---------------------------------------
