@@ -106,3 +106,13 @@ client获取access_token
 client通过access_token访问django_sim api
 -----------------------------------------
 
+    client通过Bearer认证访问django_sim api::
+
+        访问用户信息url:
+
+            http://{hostname}/django_sim/users/{username}/
+
+        获取用户信息认证头:
+
+            "Bearer Access-Token"
+
