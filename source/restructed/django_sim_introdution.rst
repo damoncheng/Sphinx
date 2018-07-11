@@ -61,8 +61,8 @@ django_sim资源
 
         Auth
 
-            每个django_sim receiver在django_sim sender注册一条Auth记录，注册成功后
-            django_sim将自助完成sender到receiver的认证，sender自动同步资源到receiver
+            每个django_sim receiver在django_sim sender注册一条Auth记录，注册成功后,
+            receiver方需要自助完成sender到receiver的认证，sender自动同步资源到receiver
 
         
 功能
