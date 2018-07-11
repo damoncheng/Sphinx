@@ -45,7 +45,7 @@ django_sim在 ``settings.py`` 基础配置
     按提示配置 ``django_sim`` 超级管理员
 
 
-使用django_sim的tof认证,在 ``settings.py`` 里面配置
+使用django_sim的tof认证
 ======================================================
 
     在django工程 ``setting.py`` 里面补充配置::
