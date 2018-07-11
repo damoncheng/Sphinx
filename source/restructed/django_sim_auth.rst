@@ -22,12 +22,12 @@ django_sim receiver
 超级用户django_sim登录
 ---------------------------------------
 
-    访问http://{receiver_hostname}/admin/, 通过 ``django_sim`` 账户登录
+    访问 ``http://{receiver_hostname}/admin/`` , 通过 ``django_sim`` 账户登录
 
 oauth code认证app搭建
 ---------------------------------------
 
-    访问http://{receiver_hostname}/django_sim/oauth/apllications/, 添加认证app::
+    访问 ``http://{receiver_hostname}/django_sim/oauth/apllications/`` , 添加认证app::
 
         Client Type : confidential
 
