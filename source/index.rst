@@ -18,10 +18,3 @@ Contents:
    restructed/django_sim_config.rst
    restructed/django_sim_auth.rst
 
-.. Indices and tables
-.. ==================
-
-.. * :ref:`genindex`
-.. * :ref:`modindex`
-.. * :ref:`search`
-
