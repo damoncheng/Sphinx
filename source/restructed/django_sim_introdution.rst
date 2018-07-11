@@ -57,6 +57,12 @@ django_sim资源
             
                 在sender第一次成功同步后，每次成功同步资源到receiver后使用
 
+    注册receiver:
+
+        Auth
+
+            每个django_sim receiver在django_sim sender注册一条Auth记录，注册成功后
+            django_sim将自助完成sender到receiver的认证，sender自动同步资源到receiver
 
         
 功能
@@ -72,7 +78,7 @@ django_sim资源
 
         django_sim reicever和sender都可以使用django-oauth-toolkit搭建基于
         client credentials认证的app来生成认证信息，client可以使用认证信息访问django_sim的
-        API来获取相关资源信息。
+        API来获取相关资源信息
 
         .. image:: images/django_sim_push.png
 
