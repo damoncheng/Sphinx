@@ -39,8 +39,8 @@ django_sim receiver
 提交认证信息给django_sim sender注册
 ---------------------------------------
 
-    将认证后的client_id和client_secrets，以及recevier的sim_site(http://{reicever_hostname}/)提交给sender注册
-    ,sender将其注册到Auth
+    将认证后的 ``client_id`` 和 ``client_secrets`` ，以及recevier的 ``sim_site(http://{reicever_hostname}/)`` 
+    提交给sender注册，sender将其注册到 ``Auth``
 
 
 自助认证
@@ -53,4 +53,8 @@ django_sim receiver
 
 django_sim sender
 
-    定时运行 ``python3 manamge.py push_sim`` , 脚本自动同步资源到注册和认证后的receiver
+    定时运行 ``python3 manamge.py push_sim --pnum=2`` , 脚本自动同步资源到注册和认证后的receiver::
+
+        例如在crontab里面每分钟同步一次:
+
+            * * * * *   python3 manamge.py push_sim --pnum 2
