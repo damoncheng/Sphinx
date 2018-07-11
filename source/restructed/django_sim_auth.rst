@@ -43,7 +43,7 @@ django_sim receiver
     提交给sender注册，sender将其注册到 ``Auth``
 
 
-自助认证
+激活sender进行自助同步
 ---------------------------------------
 
     在sender成功注册后，访问 ``http://{sender_hostname}/django_sim/sim_auth?sim_site=http://
@@ -58,3 +58,6 @@ django_sim sender
         例如在crontab里面每分钟同步一次:
 
             * * * * *   python3 manamge.py push_sim --pnum 2
+
+资源访问认证
+=======================================
