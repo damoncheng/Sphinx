@@ -72,7 +72,7 @@ django_sim资源
 
         django_sim receiver使用django-oauth-toolkit搭建基于Authorization code认证
         的app来生成认证信息，然后receiver提交认证信息到django_sim sender进行注册，
-        注册完成后，receiver自助完成认证, 认证完成后, sender将定时同步资源到receiver
+        注册完成后，receiver自助完成认证, 认证完成后, sender可定时同步资源到receiver
 
     资源访问
 

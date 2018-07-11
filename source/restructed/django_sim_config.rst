@@ -37,12 +37,12 @@ django_sim在 ``settings.py`` 基础配置
 创建django_sim超级管理用户
 ======================================================
 
-    django_sim的部分功能必须依赖于超级管理员用户 ``django_sim``
+    django_sim的功能必须依赖于超级管理员用户 ``django_sim``
     来管理,所以在做其他功能配置前，先创建超级管理员 ``django_sim`` ::
 
         python3 createsuperuser django_sim
 
-    按提示配置 ``django_sim`` 超级管理
+    按提示配置 ``django_sim`` 超级管理员
 
 
 使用django_sim的tof认证,在 ``settings.py`` 里面配置
