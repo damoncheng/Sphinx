@@ -13,6 +13,7 @@
         django>=2.0
         djangorestframework==3.7.7
         django-oauth-toolkit==1.1.0
+        django-background-tasks==1.1.13
         suds-py3==1.3.3.0
 
 指定镜像安装

@@ -19,6 +19,7 @@ django_sim在 ``settings.py`` 基础配置
 
             'oauth2_provider',
             'rest_framework',
+            'background_task',
             'django_sim',
 
             ...

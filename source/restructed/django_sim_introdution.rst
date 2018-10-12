@@ -5,9 +5,9 @@
 概述
 ============================================================
 
-    django_sim是一套推送和管理资源的SDK, 其基于SCIM方案为模板，
-    使用django-oauth-toolkit进行认证和权限控制，
-    使用djangorestframework进行资源推送。
+    django_sim是一套资源推送和管理的SDK, 其基于SCIM方案为协议模板，
+    django-oauth-toolkit进行认证和权限控制，djangorestframework方式进行资源推送.
+    。
 
 django_sim资源
 ============================================================
@@ -25,11 +25,11 @@ django_sim资源
         Role 
 
             用户角色, 用户角色属于一个Team。Role主要时为了给各平台系统基于Role来进行权限控制。
-            比如在SNG产品部时一个Team，下面可以创建一个CMO的Role。
+            比如在CSIS产品部时一个Team，下面可以创建一个CMO的Role。
 
         Project
 
-            Project是一个命名空间，属于一个User或一个Team。主要是为了中心各平台使用同一的项目名称。
+            Project是一个命名空间，属于一个User或一个Team。主要是为了中心各平台使用统一的项目名称。
 
     推送资源::
 
@@ -62,7 +62,7 @@ django_sim资源
         Auth
 
             每个django_sim receiver在django_sim sender注册一条Auth记录，注册成功后,
-            receiver方需要自助完成sender到receiver的认证，sender自动同步资源到receiver
+            receiver方需要自助完成sender到receiver的认证，注册完成后，sender自动同步资源到receiver
 
         
 功能

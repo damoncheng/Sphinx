@@ -23,7 +23,10 @@ django_sim sender搭建
 
 启动django_sim background task监听资源推送请求
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    python3 manage.py process_tasks
+
+    启动django_background_task命令::
+
+        python3 manage.py process_tasks
     
 定时发送资源推送请求到background task
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -73,7 +76,7 @@ django_sim receiver搭建
     ``oauthed``， sender将能自动同步资源到receiver
 
 
-资源访问认证
+资源访问认证搭建
 =======================================
 
 超级用户django_sim登录
