@@ -11,22 +11,40 @@
 
 
 
-资源推送认证
+资源推送认证搭建
 =======================================
 
     django_sim receiver向django_sim sender注册后，需要自助完成sender到receiver的oauth认证，
     然后sender才会自动同步资源到recevier. 具体步骤如下：
 
 
-django_sim receiver
+django_sim sender搭建
+---------------------------------------
+
+启动django_sim background task监听资源推送请求
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    python3 manage.py process_tasks
+    
+定时发送资源推送请求到background task
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+    定时运行 ``python3 manage.py push_sim`` ,  发送资源推送请求到django_sim background task, 自动推送资源到被认证的django_sim receiver::
+
+        在crontab里面配置每分钟触发一次推送请求:
+
+            * * * * *   python3 manage.py push_sim
+
+
+django_sim receiver搭建
+---------------------------------------
 
 超级用户django_sim登录
----------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
     访问 ``http://{receiver_hostname}/admin/`` , 通过 ``django_sim`` 账户登录
 
 搭建oauth code认证app
----------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
     访问 ``http://{receiver_hostname}/django_sim/oauth/apllications/`` , 选择 ``New Application``
     添加认证app, 按如下参数添加app::
@@ -41,26 +59,19 @@ django_sim receiver
     添加完成后，可获取认证信息 ``client_id`` 和 ``client_secrets``
 
 提交认证信息给django_sim sender注册
----------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
     将认证app的 ``client_id`` 和 ``client_secrets`` ，以及recevier的 
     ``sim_site(http://{reicever_hostname}/)``  提交给sender注册，sender将其注册到 ``Auth``
 
 
 激活sender进行自助同步
----------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
     在sender成功注册后，访问 ``http://{sender_hostname}/django_sim/sim_auth?sim_site=http://
     {receiver_hostname}`` ， 手动认证，激活sender访问receiver的access_token，激活成功后，页面返回
     ``oauthed``， sender将能自动同步资源到receiver
 
-django_sim sender
-
-    定时运行 ``python3 manamge.py push_sim`` , 脚本自动同步资源到注册和认证后的receiver::
-
-        在crontab里面配置每分钟同步一次:
-
-            * * * * *   python3 manamge.py push_sim
 
 资源访问认证
 =======================================
