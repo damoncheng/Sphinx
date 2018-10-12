@@ -45,7 +45,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = 'sphinx'
+project = 'django_sim'
 copyright = '2018, damoncheng'
 
 # The version info for the project you're documenting, acts as replacement for
