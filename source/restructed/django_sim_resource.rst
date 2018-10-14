@@ -98,7 +98,8 @@
 
             level :
 
-                Required, 字符串类型，该team层级, 包括system(事业群)，department(部门)，centre(中心)，team(小组)，office(事业群)，area(片区), other(其他)。
+                Required, 字符串类型，该team层级, 包括system(事业群)，department(部门)，
+                centre(中心)，team(小组)，office(事业群)，area(片区), other(其他)。
 
             parent_team :
 
