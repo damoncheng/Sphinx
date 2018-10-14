@@ -17,4 +17,5 @@ Contents:
    restructed/django_sim_install
    restructed/django_sim_config
    restructed/django_sim_auth
+   restructed/django_sim_resource
 
