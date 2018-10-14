@@ -22,7 +22,7 @@
             
                 Required, 整数类型，说明该resource的类型。可取值为0(user), 1(team), 2(role), 3(project)
 
-            resource_id   : 
+            resource_id  : 
             
                 Required, UUID字符串。每个resource的id是唯一的。
 
@@ -50,6 +50,107 @@
 
                 Optional, 该资源的外部ID字符串。external_id由外部传入。例如时TOF的小组ID。
 
+            display_name :
+
+                Optional, 字符串泪下，该资源显示名称, 不同资源允许相同显示名称。
+
+
+ SimUser
+=======================================
+
+    SimUser作为SIM User Model, 继承django.contrib.auth.models.AbstractUser和SimAbstract, 替换django原有认证User::
+
+        class SimUser(SimAbstract,AbstractUser):
+
+            resource_meta : 
+
+                Required, 一对一外键指向一条SimResource记录。
+
+            team : 
+
+                Optional, 该用户所属team，外键指向一条SimTeam记录。
+
+            manager :
+
+                Optional，该用户的manager，外间指向一条SimUser记录。
+
+
+ SimTeam
+=======================================
+
+    SimTeam的Model的定义如下::
+
+        class SimTeam(SimAbstract):
+
+            resource_meta : 
+
+                Required, 一对一外键指向一条SimResource记录。
+
+            name :
+
+                Required, 字符串类型，该team唯一名称, 可用于保存team组织架构路径。
+
+            group :
+
+                Required, 一对一外键指向一条django.contrib.auth.models.Group记录，
+                由于AbastractUser包含一对多外键groups指向Group, 因此可通过该外键
+                给该team添加额外成员。
+
+            level :
+
+                Required, 字符串类型，该team层级, 包括system(事业群)，department(部门)，centre(中心)，team(小组)，office(事业群)，area(片区), other(其他)。
+
+            parent_team :
+
+                Optional，指向上级组织，外键指向一条SimTeam记录。
+
+
+ SimRole
+=======================================
+
+    SimRole的Model的定义如下::
+
+        class SimRole(SimAbstract):
+
+            resource_meta : 
+
+                Required, 一对一外键指向一条SimResource记录。
+
+            name :
+
+                Required, 字符串类型，该role唯一名称。
+
+            group :
+
+                Required, 一对一外键指向一条django.contrib.auth.models.Group记录，
+                由于AbastractUser包含一对多外键groups指向Group, 因此可通过该外键
+                给该role添加额外成员。
+
+            team :
+
+                Optional，该role所属team, 外键指向一条SimTeam记录。
+
+
+ SimProject
+=======================================
+
+    SimProject的Model的定义如下::
+
+        class SimProject(SimAbstract):
+
+            resource_meta : 
+
+                Required, 一对一外键指向一条SimResource记录。
+
+            name :
+
+                Required, 字符串类型，该project唯一名称。
+
+            owner :
+
+                Optional，外键指向这个project归属的User，team或role。
+
+     
 
 资源使用
 =======================================
