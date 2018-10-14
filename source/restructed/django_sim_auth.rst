@@ -21,15 +21,11 @@
 django_sim sender搭建
 ---------------------------------------
 
-启动django_sim background task监听资源推送请求
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-    启动django_background_task命令::
+  启动django_sim background task监听资源推送请求
 
         python3 manage.py process_tasks
     
-定时发送资源推送请求到background task
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  定时发送资源推送请求到background task
 
     定时运行 ``python3 manage.py push_sim`` ,  发送资源推送请求到django_sim background task, 自动推送资源到被认证的django_sim receiver::
 
@@ -41,13 +37,11 @@ django_sim sender搭建
 django_sim receiver搭建
 ---------------------------------------
 
-超级用户django_sim登录
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  超级用户django_sim登录
 
     访问 ``http://{receiver_hostname}/admin/`` , 通过 ``django_sim`` 账户登录
 
-搭建oauth code认证app
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  搭建oauth code认证app
 
     访问 ``http://{receiver_hostname}/o/apllications/`` , 选择 ``New Application``
     添加认证app, 按如下参数添加app::
@@ -56,23 +50,24 @@ django_sim receiver搭建
 
         Authorization Grant Type : authorization-code
 
-        Redirect Urls : http://{sender_hostname}/django_sim/exchange?
+        Redirect Urls : http://{sender_hostname}/django_sim/auth/exchange?
         sim_site=http://{receiver_hostname}
 
     添加完成后，可获取认证信息 ``client_id`` 和 ``client_secrets``
 
-提交认证信息给django_sim sender注册
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  提交认证信息给django_sim sender注册
 
     将认证app的 ``client_id`` 和 ``client_secrets`` ，以及recevier的 ``sim_site(格式：http://{reicever_hostname}/)``  
     提交给sender注册，sender将注册一条认证记录到SimAuth
 
 
-激活sender进行自助同步
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  激活sender进行自助同步
 
-    在sender成功注册后，访问 ``http://{sender_hostname}/django_sim/auth/init?sim_site=http://{receiver_hostname}`` ， 
-    手动认证，激活sender访问receiver的access_token，激活成功后，页面返回 ``oauthed`` ，sender将能自动增量同步资源到receiver
+    在sender成功注册后，访问:: 
+
+        http://{sender_hostname}/django_sim/auth/init?sim_site=http://{receiver_hostname}
+
+    进行手动认证，激活sender访问receiver的access_token，激活成功后，页面返回 ``oauthed`` ，sender将能自动增量同步资源到receiver
 
 
 资源访问认证搭建
@@ -107,7 +102,7 @@ client获取access_token
 
         获取access_token 认证header:
 
-            "Basic %s:%s" % base64(client_id:client_secrets)
+            "Basic %s" % base64(client_id:client_secrets)
 
 
     成功后返回::
