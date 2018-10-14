@@ -49,7 +49,7 @@ django_sim receiver搭建
 搭建oauth code认证app
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-    访问 ``http://{receiver_hostname}/django_sim/oauth/apllications/`` , 选择 ``New Application``
+    访问 ``http://{receiver_hostname}/o/apllications/`` , 选择 ``New Application``
     添加认证app, 按如下参数添加app::
 
         Client Type : confidential
@@ -65,15 +65,16 @@ django_sim receiver搭建
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
     将认证app的 ``client_id`` 和 ``client_secrets`` ，以及recevier的 
-    ``sim_site(http://{reicever_hostname}/)``  提交给sender注册，sender将其注册到 ``Auth``
+    ``sim_site(格式：http://{reicever_hostname}/)``  提交给sender注册，
+    sender将注册一条认证记录到SimAuth
 
 
 激活sender进行自助同步
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-    在sender成功注册后，访问 ``http://{sender_hostname}/django_sim/sim_auth?sim_site=http://
+    在sender成功注册后，访问 ``http://{sender_hostname}/django_sim/auth/init?sim_site=http://
     {receiver_hostname}`` ， 手动认证，激活sender访问receiver的access_token，激活成功后，页面返回
-    ``oauthed``， sender将能自动同步资源到receiver
+    ``oauthed``， sender将能自动增量同步资源到receiver
 
 
 资源访问认证搭建
@@ -87,7 +88,7 @@ django_sim receiver搭建
 搭建oauth client认证app
 ---------------------------------------
 
-    访问 ``http://{hostname}/django_sim/oauth/apllications/`` , 选择 ``New Application``
+    访问 ``http://{hostname}/o/apllications/`` , 选择 ``New Application``
     添加认证app, 按如下参数添加app::
 
         Client Type : confidential
@@ -104,7 +105,7 @@ client获取access_token
 
         获取access_token url:
             
-            http://{hostname}/django_sim/sim_api_token
+            http://{hostname}/django_sim/api/token
 
         获取access_token 认证header:
 

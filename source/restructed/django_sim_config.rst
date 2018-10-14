@@ -64,7 +64,7 @@ django_sim在 ``settings.py`` 基础配置
             ),
 
             'DEFAULT_AUTHENTICATION_CLASSES' : (
-                'django_sim.authentication,backend.SIMAuthentication',
+                'django_sim.authentication.backend.SIMAuthentication',
             )
             ...
         }
