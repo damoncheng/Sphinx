@@ -9,14 +9,14 @@
 访问资源结构
 ---------------------------------------
 
- django_sim访问资源结构图:
+  django_sim访问资源结构图:
 
-    .. image:: images/django_sim_resource.png
+      .. image:: images/django_sim_resource.png
 
 
- SimResource
+  SimResource
 
-    User,Team,Role,Project都是一种Resource。SimResource作为资源适配器统一访问资源给其他类使用::
+      User,Team,Role,Project都是一种Resource。SimResource作为资源适配器统一访问资源给其他类使用::
 
         class SimResource(models.Model):
 
@@ -37,9 +37,9 @@
                 Required, Datetime类型。记录resource的最后修改时间。
 
 
- SimAbstract
+  SimAbstract
 
-    SimAbstract是SIM的User,Team,Role,Project的抽象类::
+      SimAbstract是SIM的User,Team,Role,Project的抽象类::
 
         class SimAbstract(models.Model):
 
@@ -56,9 +56,9 @@
                 Optional, 字符串泪下，该资源显示名称, 不同资源允许相同显示名称。
 
 
- SimUser
+  SimUser
 
-    SimUser作为SIM User Model, 继承django.contrib.auth.models.AbstractUser和SimAbstract, 替换django原有认证User::
+      SimUser作为SIM User Model, 继承django.contrib.auth.models.AbstractUser和SimAbstract, 替换django原有认证User::
 
         class SimUser(SimAbstract,AbstractUser):
 
@@ -75,9 +75,9 @@
                 Optional，该用户的manager，外间指向一条SimUser记录。
 
 
- SimTeam
+  SimTeam
 
-    SimTeam的Model的定义如下::
+      SimTeam的Model的定义如下::
 
         class SimTeam(SimAbstract):
 
@@ -105,9 +105,9 @@
                 Optional，指向上级组织，外键指向一条SimTeam记录。
 
 
- SimRole
+  SimRole
 
-    SimRole的Model的定义如下::
+      SimRole的Model的定义如下::
 
         class SimRole(SimAbstract):
 
@@ -130,9 +130,9 @@
                 Optional，该role所属team, 外键指向一条SimTeam记录。
 
 
- SimProject
+  SimProject
 
-    SimProject的Model的定义如下::
+      SimProject的Model的定义如下::
 
         class SimProject(SimAbstract):
 
@@ -152,6 +152,7 @@
 推送资源结构
 ---------------------------------------
 
+  SimBulk
 
 认证资源结构
 ---------------------------------------
