@@ -6,6 +6,8 @@
 资源结构
 =======================================
 
+    django_sim资源结构图:
+
     .. image:: images/django_sim_resource.png
 
 
