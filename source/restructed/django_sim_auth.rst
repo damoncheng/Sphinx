@@ -21,7 +21,7 @@
 django_sim sender搭建
 ---------------------------------------
 
-  启动django_sim background task监听资源推送请求
+  启动django_sim background task监听资源推送请求::
 
         python3 manage.py process_tasks
     
