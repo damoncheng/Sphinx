@@ -64,15 +64,15 @@ django_sim receiver搭建
 提交认证信息给django_sim sender注册
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-    将认证app的 ``client_id`` 和 ``client_secrets`` ，以及recevier的``sim_site(格式：http://{reicever_hostname}/)``  
+    将认证app的 ``client_id`` 和 ``client_secrets`` ，以及recevier的 ``sim_site(格式：http://{reicever_hostname}/)``  
     提交给sender注册，sender将注册一条认证记录到SimAuth
 
 
 激活sender进行自助同步
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-    在sender成功注册后，访问``http://{sender_hostname}/django_sim/auth/init?sim_site=http://{receiver_hostname}`` ， 
-    手动认证，激活sender访问receiver的access_token，激活成功后，页面返回``oauthed``，sender将能自动增量同步资源到receiver
+    在sender成功注册后，访问 ``http://{sender_hostname}/django_sim/auth/init?sim_site=http://{receiver_hostname}`` ， 
+    手动认证，激活sender访问receiver的access_token，激活成功后，页面返回 ``oauthed`` ，sender将能自动增量同步资源到receiver
 
 
 资源访问认证搭建
