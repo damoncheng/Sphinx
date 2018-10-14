@@ -3,7 +3,7 @@
 =======================================
 
 
-资源结构
+访问资源结构
 =======================================
 
     django_sim资源结构图:
@@ -11,7 +11,10 @@
     .. image:: images/django_sim_resource.png
 
 
-    User,Team,Role,Project都是一种Resource。SimResource作为资源适配器提供统一访问资源Model给其他类使用::
+ SimResource
+=======================================
+
+    User,Team,Role,Project都是一种Resource。SimResource作为资源适配器统一访问资源给其他类使用::
 
         class SimResource(models.Model):
 
@@ -32,7 +35,22 @@
                 Required, Datetime类型。记录resource的最后修改时间。
 
 
+ SimAbstract
+=======================================
 
-资源访问
+    SimAbstract是SIM的User,Team,Role,Project的抽象类::
+
+        class SimAbstract(models.Model):
+
+            resource_id : 
+
+                Required, UUID字符串。每个Resource的id时唯一的。
+
+            external_id :
+
+                Optional, 该资源的外部ID字符串。external_id由外部传入。例如时TOF的小组ID。
+
+
+资源使用
 =======================================
 
