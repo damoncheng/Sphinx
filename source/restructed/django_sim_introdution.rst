@@ -5,35 +5,37 @@
 概述
 ============================================================
 
-    django_sim是一套资源推送和管理的SDK, 其基于SCIM方案为协议模板，
-    django-oauth-toolkit进行认证和权限控制，djangorestframework方式进行资源推送.
-    。
+    django_sim是一套标准化管理和推送资源的SDK, 其基于SCIM方案为协议模板，
+    django-oauth-toolkit进行资源权限管理，djangorestframework进行资源推送。
 
-django_sim资源
+资源分布
 ============================================================
 
-    django工程可使用的资源::
+    django_sim资源分布如下,详细结构在第五章``资源``介绍。
 
-        User
+
+    访问资源::
+
+        SimUser
         
-            用户
+            用户, 可作为认证User替换django默认认证User
 
-        Team
+        SimTeam
 
             用户组, 一个Team下面可以包含多个User和Team。Team对应公司的各层组织架构
 
-        Role 
+        SimRole 
 
             用户角色, 用户角色属于一个Team。Role主要时为了给各平台系统基于Role来进行权限控制。
             比如在CSIS产品部时一个Team，下面可以创建一个CMO的Role。
 
-        Project
+        SimProject
 
-            Project是一个命名空间，属于一个User或一个Team。主要是为了中心各平台使用统一的项目名称。
+            Project是一个命名空间，属于一个User或一个Team,或一个Role。主要是为了中心各平台使用统一的项目名称。
 
     推送资源::
 
-        Bulk
+        SimBulk
 
             django_sim sender基于bulk来推送资源, 默认bulk大小是1024条记录，第一次全量同步资源到
             receiver，第二次以后增量同步资源到receiver。sender在每次推送前会取receiver的最后一次
@@ -57,9 +59,9 @@ django_sim资源
             
                 在sender第一次成功同步后，每次成功同步资源到receiver后使用
 
-    注册receiver::
+    认证资源::
 
-        Auth
+        SimAuth
 
             每个django_sim receiver在django_sim sender注册一条Auth记录，注册成功后,
             receiver方需要自助完成sender到receiver的认证，注册完成后，sender自动同步资源到receiver
@@ -89,7 +91,7 @@ django_sim资源
 
     认证User替换
 
-        替换原来的django user表，使用django_sim的User来进行认证
+        替换django默认user，使用django_sim的SimUser来进行权限认证
 
     tof认证
 
