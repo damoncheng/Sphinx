@@ -6,7 +6,7 @@
 资源结构
 =======================================
 
-..image:: images/django_sim_resource.png
+    .. image:: images/django_sim_resource.png
 
 
     User,Team,Role,Project都是一种Resource。SimResource作为资源适配器提供统一访问资源Model给其他类使用::
