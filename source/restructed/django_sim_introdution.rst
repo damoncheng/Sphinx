@@ -16,6 +16,11 @@
 
     访问资源::
 
+        SimResource
+
+            SimResource是一个资源适配器，其他访问资源一对一外键SimResource，从而其他类只需要
+            外键SimResource，就可以使用django_sim所有的访问资源。
+
         SimUser
         
             用户, 可作为认证User替换django默认认证User
