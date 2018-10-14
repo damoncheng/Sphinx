@@ -82,9 +82,9 @@ django_sim在 ``settings.py`` 基础配置
 
         python3 createsuperuser django_sim
 
-    按提示配置 ``django_sim`` 超级管理员。 然后访问::
+    按提示配置 ``django_sim`` 超级管理员。 然后访问django admin页面::
 
-        http://{hostname}/admin
+        http://{hostname}/admin/
 
     通过超级管理员账户 ``django_sim`` 进行登录。
 
