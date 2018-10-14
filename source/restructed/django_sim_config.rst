@@ -5,7 +5,9 @@
 django_sim在 ``settings.py`` 基础配置
 ======================================================
 
-    在django工程 ``settings.py`` 里面配置::
+    在django工程 ``settings.py`` 里面进行如下配置
+
+    必要配置::
 
         #django_sim application定义
         INSTALLED_APPS = [
@@ -29,21 +31,16 @@ django_sim在 ``settings.py`` 基础配置
         #django_sim替换django认证User
         AUTH_USER_MODEL=`django_sim.User`
 
+
         #使用django自身认证backend，认证django admin登录页面
         AUTHENTICATION_BACKENDS = [
             ...
             'django.contrib.auth.backends.ModelBackend',
         ]
 
-创建django_sim超级管理用户
-======================================================
+    可选配置::
 
-    django_sim的功能必须依赖于超级管理员用户 ``django_sim``
-    来管理,所以在做其他功能配置前，先创建超级管理员 ``django_sim`` ::
-
-        python3 createsuperuser django_sim
-
-    按提示配置 ``django_sim`` 超级管理员
+        ...
 
 
 使用django_sim的tof认证
@@ -74,5 +71,21 @@ django_sim在 ``settings.py`` 基础配置
         LOGOUT_URL = "http://passport.oa.com/modules/passport/signout.ashx?title=%s&url=%s"
             %s ("title", "http://{hostname}/django_sim/sim_login/")
         
+
+创建django_sim超级管理用户
+======================================================
+
+    django_sim第四章的认证配置，最好通过创建超级管理员用户 ``django_sim``
+    来进行管理, django_sim不会对该用户名的User资源进行管理，这样可以避免
+    用户删除造成配置被连带删除的风险，所以在做其他功能配置前，先创建超级管理员
+    ``django_sim`` ::
+
+        python3 createsuperuser django_sim
+
+    按提示配置 ``django_sim`` 超级管理员。 然后访问::
+
+        http://{hostname}/admin
+
+    通过超级管理员账户 ``django_sim`` 进行登录。
 
 
