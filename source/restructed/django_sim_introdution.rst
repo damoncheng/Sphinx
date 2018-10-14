@@ -5,8 +5,8 @@
 概述
 ============================================================
 
-    django_sim是一套标准化管理和推送资源的SDK, 其基于SCIM方案为协议模板，
-    django-oauth-toolkit进行资源权限管理，djangorestframework进行资源推送。
+    django_sim是一套标准化管理和推送资源的SDK, 其基于SCIM方案为资源定义模板，
+    django-oauth-toolkit进行资源权限管理，djangorestframework进行资源推送和接口定义。
 
 资源分布
 ============================================================
