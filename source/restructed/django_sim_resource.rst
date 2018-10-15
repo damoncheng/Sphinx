@@ -257,71 +257,71 @@ Http接口
 
   django_sim的http接口需要通过 :ref:`django_sim_auth_resource_access` 才有访问权限。
 
-    接口支持如下:
+    接口支持如下::
 
-            GET /users                   
-            
-                获取用户列表
+        GET /users                   
+        
+            获取用户列表
 
-            GET /users/<username>        
-            
-                获取指定用户信息
+        GET /users/<username>        
+        
+            获取指定用户信息
 
-            GET /users/<username>/teams  
-            
-                获取指定用户所在team列表
+        GET /users/<username>/teams  
+        
+            获取指定用户所在team列表
 
-            GET /users/<username>/roles  
-            
-                获取指定用户所在role列表
+        GET /users/<username>/roles  
+        
+            获取指定用户所在role列表
 
-            GET /teams                   
-            
-                获取team列表
+        GET /teams                   
+        
+            获取team列表
 
-            GET /teams/<id>              
-            
-                获取team详情
+        GET /teams/<id>              
+        
+            获取team详情
 
-            GET /teams/<id>/users        
-            
-                获取team下面的user列表
+        GET /teams/<id>/users        
+        
+            获取team下面的user列表
 
-            GET /teams/<id>/teams        
-            
-                获取team下面的team列表
+        GET /teams/<id>/teams        
+        
+            获取team下面的team列表
 
-            GET /teams/<id>/roles        
-            
-                获取team下面的role列表
+        GET /teams/<id>/roles        
+        
+            获取team下面的role列表
 
-            GET /teams/<id>/projects     
-            
-                获取team下面的project列表
+        GET /teams/<id>/projects     
+        
+            获取team下面的project列表
 
-            GET /roles                   
-            
-                获取role列表
-            
-            GET /roles/<id>              
-            
-                获取role信息
+        GET /roles                   
+        
+            获取role列表
+        
+        GET /roles/<id>              
+        
+            获取role信息
 
-            GET /roles/<id>/users        
-            
-                获取role的user列表
+        GET /roles/<id>/users        
+        
+            获取role的user列表
 
-            GET /projects                
-            
-                获取project列表
-            
-            GET /projects/<id>           
-            
-                获取project信息
+        GET /projects                
+        
+            获取project列表
+        
+        GET /projects/<id>           
+        
+            获取project信息
 
-            GET /projects/<id>/users     
-            
-                获取project的user列表
+        GET /projects/<id>/users     
+        
+            获取project的user列表
 
 
 函数接口 
@@ -329,38 +329,38 @@ Http接口
 
   django_sim的函数接口提供给server方进行业务逻辑组装，函数接口都是类静态函数可直接调用。
 
-    接口支持如下：
+    接口支持如下::
 
-            django_sim.views.UserViewSet.get_team_list(username)
+        django_sim.views.UserViewSet.get_team_list(username)
 
-                获取指定用户所在team列表
+            获取指定用户所在team列表
 
-            django_sim.views.UserViewSet.get_role_list(username)
+        django_sim.views.UserViewSet.get_role_list(username)
 
-                获取指定用户所在role列表
+            获取指定用户所在role列表
 
-            django_sim.views.TeamViewSet.get_team_users(team)
+        django_sim.views.TeamViewSet.get_team_users(team)
 
-                获取team下面的user列表
+            获取team下面的user列表
 
-            django_sim.views.TeamViewSet.get_team_list(team)
+        django_sim.views.TeamViewSet.get_team_list(team)
 
-                获取team下面的team列表
+            获取team下面的team列表
 
-            django_sim.views.TeamViewSet.get_team_roles(team)
+        django_sim.views.TeamViewSet.get_team_roles(team)
 
-                获取team所在的role列表
+            获取team所在的role列表
 
-            django_sim.views.TeamViewSet.get_team_projects(team)
+        django_sim.views.TeamViewSet.get_team_projects(team)
 
-                获取team相关的project列表
+            获取team相关的project列表
 
-            django_sim.views.RoleViewSet.get_role_users(role)
+        django_sim.views.RoleViewSet.get_role_users(role)
 
-                获取role下面的user列表
+            获取role下面的user列表
 
-            django_sim.views.ProjectViewSet.get_project_users(project)
+        django_sim.views.ProjectViewSet.get_project_users(project)
 
-                获取project相关的user列表
-      
+            获取project相关的user列表
+  
 
