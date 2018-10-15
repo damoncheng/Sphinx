@@ -11,7 +11,7 @@
 资源分布
 ============================================================
 
-    django_sim资源分布如下,详细结构在第五章ShortAnchor_介绍。
+    django_sim资源分布如下,详细结构在`第五章资源结构`_介绍。
 
 
     访问资源::
@@ -102,3 +102,5 @@
 
         提供tof django认证backend和tof djangorestframwork认证backend实现tof认证
      
+
+.. _a 第五章资源结构: http://www.baidu.com
