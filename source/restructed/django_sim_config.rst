@@ -72,7 +72,7 @@ django_sim在 ``settings.py`` 基础配置
             %s ("title", "http://{hostname}/django_sim/sim_login/")
         
 
-创建django_sim超级管理用户
+创建django_sim超级管理员用户
 ======================================================
 
     django_sim第四章的认证配置，最好通过创建超级管理员用户 ``django_sim``

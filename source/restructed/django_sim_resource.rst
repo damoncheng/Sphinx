@@ -3,6 +3,8 @@
 =======================================
 
 
+.. _ShortAnchor:
+
 资源结构
 =======================================
 
@@ -26,15 +28,19 @@
 
             resource_id  : 
             
-                Required, UUID字符串。每个resource的id是唯一的。
+                Required, UUID字符串，每个resource的id是唯一的。
 
             created : 
             
-                Required, Datetime类型。记录resource的创建时间。
+                Required, Datetime类型，记录resource的创建时间。
 
             last_modified : 
             
-                Required, Datetime类型。记录resource的最后修改时间。
+                Required, Datetime类型，记录resource的最后修改时间。
+
+            is_valid :
+
+                Required, Boolean类型，标志该资源是否有效
 
 
   SimAbstract
@@ -46,6 +52,10 @@
             resource_id : 
 
                 Required, UUID字符串。每个Resource的id时唯一的。
+
+            is_valid :
+
+                Required, Boolean类型，标志该资源是否有效
 
             external_id :
 
@@ -153,6 +163,10 @@
 ---------------------------------------
 
   SimBulk
+
+      
+
+      
 
 认证资源结构
 ---------------------------------------

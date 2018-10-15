@@ -57,7 +57,10 @@ django_sim receiver搭建
 
   提交认证信息给django_sim sender注册
 
-    将认证app的 ``client_id`` 和 ``client_secrets`` ，以及recevier的 ``sim_site(格式：http://{reicever_hostname}/)``  
+    将认证app的 ``client_id`` 和 ``client_secrets`` ，以及recevier的sim_site::
+    
+        格式：http://{reicever_hostname}/)
+
     提交给sender注册，sender将注册一条认证记录到SimAuth
 
 
