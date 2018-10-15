@@ -70,10 +70,15 @@ django_sim在 ``settings.py`` 基础配置
 
         SIM_INIT_SEQ_CLEAR_DATA = False
 
-            django_sim receiver在全量推送第一次bulk推送时，是否清空django_sim相关所有数据，
+            django_sim receiver在接受全量推送第一次BULK推送时，是否清空django_sim相关所有数据，
             默认False
 
-            
+        SIM_PUSH_IGNORE_IS_VALID = False
+
+            django_sim receiver在接受sender推送的删除记录(is_valid=False)时，是否忽略该标志位,
+            默认设置为False，表示不忽略，表示receiver接受is_valid=False的记录时, 本地将删除该
+            记录。当receiver也充当sender角色延续传递资源的时候，应该将其设置为True，reciever将
+            保存is_valid=False的记录。
 
 
 
