@@ -11,7 +11,7 @@
 资源分布
 ============================================================
 
-    django_sim资源分布如下,详细结构在 :ref:`resource_structure` 介绍。
+    django_sim资源分布如下,详细结构在第五章 :ref:`django_sim_resource_structure` 介绍。
 
 
     访问资源::

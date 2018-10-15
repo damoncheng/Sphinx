@@ -75,7 +75,7 @@ django_sim在 ``settings.py`` 基础配置
 创建django_sim超级管理员用户
 ======================================================
 
-    django_sim第四章的认证配置，最好通过创建超级管理员用户 ``django_sim``
+    django_sim第四章 :ref:`django_sim_auth` ，最好通过创建超级管理员用户 ``django_sim``
     来进行管理, django_sim不会对该用户名的User资源进行管理，这样可以避免
     用户删除造成配置被连带删除的风险，所以在做其他功能配置前，先创建超级管理员
     ``django_sim`` ::
