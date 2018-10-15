@@ -74,6 +74,7 @@ django_sim receiver搭建
 
     进行手动认证，激活sender访问receiver的access_token，激活成功后，页面返回 ``oauthed`` ，sender将能自动增量同步资源到receiver
 
+.. _django_sim_auth_resource_access:
 
 资源访问认证搭建
 =======================================
@@ -81,7 +82,7 @@ django_sim receiver搭建
 超级用户django_sim登录
 ---------------------------------------
 
-    访问 ``http://{receiver_hostname}/admin/`` , 通过 ``django_sim`` 账户登录
+    访问 ``http://{hostname}/admin/`` , 通过 ``django_sim`` 账户登录
 
 搭建oauth client认证app
 ---------------------------------------
