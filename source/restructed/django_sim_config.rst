@@ -58,11 +58,11 @@ django_sim在 ``settings.py`` 基础配置
 
         SIM_REFRESH_ACCESS_TOKEN_TIME = 1 * 60 * 60
 
-            django_sim sender在认证Token过期前，多少时间刷新Token，默认1个小时
+            django_sim sender在receiver access token过期前多少时间自动刷新access token，默认1个小时
 
         SIM_REFRESH_API_TOKEN_TIME = 10 * 60
 
-            client访问的API Toekn在Toekn过期前，多少时间刷新Token，默认10分钟
+            client在api token过期前多少时间调用api token接口时刷新api token，默认10分钟
 
         SIM_SAVE_BACKGROUND_TIME = 7
 

@@ -62,7 +62,7 @@
 
             display_name :
 
-                Optional, 字符串泪下，该资源显示名称, 不同资源允许相同显示名称。
+                Optional, 字符串类型，该资源显示名称, 不同资源允许相同显示名称。
 
 
   SimUser
@@ -163,12 +163,84 @@
 
   SimBulk
 
-      
+      SimBulk的Model的定义如下::
+
+        class SimBulk(SimAbstract):
+
+            sender_time :
+
+                Required, Datetime类型，sender推送到receiver的时间点，标志一次推送批次
+
+            seq :
+
+                Required, 整数类型，标志该次推送批次的序列号，从0开始
+
+            method :
+
+                Required, 整数类型，标志该次批次的推送类型， 0表示全量同步，1表示增量同步，2表示全量同步结束BULK，3表示增量同步结束BULK
+
+            description :
+
+                Optional, 文本类型，保存本次序列号推送的内容
+
+            created :
+
+                Required, Datetime类型，BULK创建时间
 
       
 
 认证资源结构
 ---------------------------------------
+
+  SimAuth
+
+      SimAuth的model定义如下::
+
+        class SimAuth(SimAbstract): 
+
+            client_id :
+
+                Required, 字符串类型，receiver oauth code认证的client_id
+
+            client_secret :
+
+                Required，字符串类型，receiver oauth code认证的client_secret
+
+            sim_site :
+
+                Required, 字符串类型，reciever的url前缀(格式:http://{receiver_hostname})
+
+            token_url :
+
+                Optional，字符串类型，获取receiver access token url，在认证完成后自动生成
+
+            last_push_url :
+
+                Opional , 字符串类型，获取receiver最后一次结束BULK的url，在认证完成后自动生成
+
+            push_url :
+
+                Optional , 字符串类型，sender推送资源到receiver的url，在认证完成后自动生成
+
+            code :
+
+                Optional，字符串类型，最后更新receiver的认证code, 在认证完成后自动生成
+
+            access_token :
+
+                Optinal , 字符串类型，最后更新receiver的access token，在认证完成后自动生成
+
+            refresh_token :
+
+                Optional，字符串类型，最后更新receiver的refresh token，在认证完成后自动生成
+
+            last_token_status :
+
+                Optional，字符串类型，最后更新receiver access token的http状态
+
+            last_status :
+
+                Optional，字符串类型，最后推送到receiver BULK的http状态
 
 
 
