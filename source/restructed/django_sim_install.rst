@@ -21,7 +21,14 @@
 
     django_sim可以通过pip3指定镜像安装::
 
-        后续补充到文档
+        IDC 环境:
+
+            pip install django_sim -i http://pypi.dq.oa.com/simple/ --trusted-host=pypi.dq.oa.com
+
+        Devnet 环境:
+
+            pip install django_sim -i http://devnet.pypi.dq.oa.com/simple/ --trusted-host=devnet.pypi.dq.oa.com
+
 
 本地安装
 =======================================
