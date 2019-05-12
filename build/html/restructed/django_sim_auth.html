@@ -1,0 +1,353 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>4. 认证 &mdash; django_sim 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="5. 资源" href="django_sim_resource.html" />
+    <link rel="prev" title="3. 配置" href="django_sim_config.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> django_sim
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="django_sim_introdution.html">1. 简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="django_sim_install.html">2. 安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="django_sim_config.html">3. 配置</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">4. 认证</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">4.1. 资源推送认证搭建</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#django-sim-sender">4.1.1. django_sim sender搭建</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#django-sim-receiver">4.1.2. django_sim receiver搭建</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#django-sim-auth-resource-access">4.2. 资源访问认证搭建</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#django-sim">4.2.1. 超级用户django_sim登录</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#oauth-clientapp">4.2.2. 搭建oauth client认证app</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#clientaccess-token">4.2.3. client获取access_token</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#clientaccess-tokendjango-sim-api">4.2.4. client通过access_token访问django_sim api</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="django_sim_resource.html">5. 资源</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">django_sim</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>4. 认证</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/restructed/django_sim_auth.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="django-sim-auth">
+<span id="id1"></span><h1>4. 认证<a class="headerlink" href="#django-sim-auth" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div><p>django_sim根据使用功能的不同可以搭建两种认证，资源推送认证和资源访问认证:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>资源推送认证：sender和receiver之间搭建oauth code认证，认证后，sender自动推送资源到receiver
+
+资源访问认证：sender或receiver可以搭建oauth client认证，client可以使用认证信息访问
+django_sim的API, 获取资源信息
+</pre></div>
+</div>
+</div></blockquote>
+<div class="section" id="id2">
+<h2>4.1. 资源推送认证搭建<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>django_sim receiver向django_sim sender注册后，需要自助完成sender到receiver的oauth认证，
+然后sender才会自动同步资源到recevier. 具体步骤如下：</p>
+</div></blockquote>
+<div class="section" id="django-sim-sender">
+<h3>4.1.1. django_sim sender搭建<a class="headerlink" href="#django-sim-sender" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>启动django_sim background task监听资源推送请求:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="n">manage</span><span class="o">.</span><span class="n">py</span> <span class="n">process_tasks</span>
+</pre></div>
+</div>
+<p>定时发送资源推送请求到background task</p>
+<blockquote>
+<div><p>定时运行 <code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">manage.py</span> <span class="pre">push_sim</span></code> ,  发送资源推送请求到django_sim background task, 自动推送资源到被认证的django_sim receiver:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">在crontab里面配置每分钟触发一次推送请求</span><span class="p">:</span>
+
+    <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span>   <span class="n">python3</span> <span class="n">manage</span><span class="o">.</span><span class="n">py</span> <span class="n">push_sim</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="django-sim-receiver">
+<h3>4.1.2. django_sim receiver搭建<a class="headerlink" href="#django-sim-receiver" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>超级用户django_sim登录</p>
+<blockquote>
+<div><p>访问 <code class="docutils literal notranslate"><span class="pre">http://{receiver_hostname}/admin/</span></code> , 通过 <code class="docutils literal notranslate"><span class="pre">django_sim</span></code> 账户登录</p>
+</div></blockquote>
+<p>搭建oauth code认证app</p>
+<blockquote>
+<div><p>访问 <code class="docutils literal notranslate"><span class="pre">http://{receiver_hostname}/o/apllications/</span></code> , 选择 <code class="docutils literal notranslate"><span class="pre">New</span> <span class="pre">Application</span></code>
+添加认证app, 按如下参数添加app:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Client Type : confidential
+
+Authorization Grant Type : authorization-code
+
+Redirect Urls : http://{sender_hostname}/django_sim/auth/exchange?
+sim_site=http://{receiver_hostname}
+</pre></div>
+</div>
+<p>添加完成后，可获取认证信息 <code class="docutils literal notranslate"><span class="pre">client_id</span></code> 和 <code class="docutils literal notranslate"><span class="pre">client_secrets</span></code></p>
+</div></blockquote>
+<p>提交认证信息给django_sim sender注册</p>
+<blockquote>
+<div><p>将认证app的 <code class="docutils literal notranslate"><span class="pre">client_id</span></code> 和 <code class="docutils literal notranslate"><span class="pre">client_secrets</span></code> ，以及recevier的sim_site:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>格式：http://{reicever_hostname}/)
+</pre></div>
+</div>
+<p>提交给sender注册，sender将注册一条认证记录到SimAuth</p>
+</div></blockquote>
+<p>激活sender进行自助同步</p>
+<blockquote>
+<div><p>在sender成功注册后，访问:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>http://{sender_hostname}/django_sim/auth/init?sim_site=http://{receiver_hostname}
+</pre></div>
+</div>
+<p>进行手动认证，激活sender访问receiver的access_token，激活成功后，页面返回 <code class="docutils literal notranslate"><span class="pre">oauthed</span></code> ，sender将能自动增量同步资源到receiver</p>
+</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="django-sim-auth-resource-access">
+<span id="id3"></span><h2>4.2. 资源访问认证搭建<a class="headerlink" href="#django-sim-auth-resource-access" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="django-sim">
+<h3>4.2.1. 超级用户django_sim登录<a class="headerlink" href="#django-sim" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>访问 <code class="docutils literal notranslate"><span class="pre">http://{hostname}/admin/</span></code> , 通过 <code class="docutils literal notranslate"><span class="pre">django_sim</span></code> 账户登录</p>
+</div></blockquote>
+</div>
+<div class="section" id="oauth-clientapp">
+<h3>4.2.2. 搭建oauth client认证app<a class="headerlink" href="#oauth-clientapp" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>访问 <code class="docutils literal notranslate"><span class="pre">http://{hostname}/o/apllications/</span></code> , 选择 <code class="docutils literal notranslate"><span class="pre">New</span> <span class="pre">Application</span></code>
+添加认证app, 按如下参数添加app:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Client</span> <span class="n">Type</span> <span class="p">:</span> <span class="n">confidential</span>
+
+<span class="n">Authorization</span> <span class="n">Grant</span> <span class="n">Type</span> <span class="p">:</span> <span class="n">client</span><span class="o">-</span><span class="n">credentials</span>
+</pre></div>
+</div>
+<p>添加完成后，将生成认证信息 <code class="docutils literal notranslate"><span class="pre">client_id</span></code> 和 <code class="docutils literal notranslate"><span class="pre">client_secrets</span></code></p>
+</div></blockquote>
+</div>
+<div class="section" id="clientaccess-token">
+<h3>4.2.3. client获取access_token<a class="headerlink" href="#clientaccess-token" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>client通过Basic认证获取访问django_sim api的access_token:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">获取access_token</span> <span class="n">url</span><span class="p">:</span>
+
+    <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="p">{</span><span class="n">hostname</span><span class="p">}</span><span class="o">/</span><span class="n">django_sim</span><span class="o">/</span><span class="n">api</span><span class="o">/</span><span class="n">token</span>
+
+<span class="n">获取access_token</span> <span class="n">认证header</span><span class="p">:</span>
+
+    <span class="s2">&quot;Basic </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">base64</span><span class="p">(</span><span class="n">client_id</span><span class="p">:</span><span class="n">client_secrets</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>成功后返回:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;access_token&quot;</span><span class="p">:</span><span class="s2">&quot;xxxxxx&quot;</span><span class="p">,</span> <span class="s2">&quot;expires&quot;</span> <span class="p">:</span> <span class="s2">&quot;2018-07-11 17:32:00&quot;</span><span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="clientaccess-tokendjango-sim-api">
+<h3>4.2.4. client通过access_token访问django_sim api<a class="headerlink" href="#clientaccess-tokendjango-sim-api" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>client通过Bearer认证访问django_sim api:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">访问用户信息url</span><span class="p">:</span>
+
+    <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="p">{</span><span class="n">hostname</span><span class="p">}</span><span class="o">/</span><span class="n">django_sim</span><span class="o">/</span><span class="n">users</span><span class="o">/</span><span class="p">{</span><span class="n">username</span><span class="p">}</span><span class="o">/</span>
+
+<span class="n">获取用户信息认证头</span><span class="p">:</span>
+
+    <span class="s2">&quot;Bearer Access-Token&quot;</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="django_sim_resource.html" class="btn btn-neutral float-right" title="5. 资源" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="django_sim_config.html" class="btn btn-neutral float-left" title="3. 配置" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, damoncheng
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
